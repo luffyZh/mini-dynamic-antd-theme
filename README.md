@@ -97,7 +97,6 @@ document.getElementById('header_bar').style.backgroundColor
 | generateThemeColor   | `param: color`, generate colorObj based on color  |
 | changeAntdTheme   | `param: colorObj`, change the antd theme |
 
-```
 
 ## 🍎 Attention
 
@@ -106,5 +105,6 @@ document.getElementById('header_bar').style.backgroundColor
  - The current version requires your antd version to be lower than v3.25.0
 
 After the version_4.0, `ant-design` has lots of changes. So the plugin could have some problems, you can find and give me a issue. I'll fix it as soon as possible.
+
 
 ## 🌈 More detail u can go to the [dynamic-antd-theme](https://github.com/luffyZh/dynamic-antd-theme)
