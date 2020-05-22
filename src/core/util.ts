@@ -110,7 +110,7 @@ export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj 
     console.log('The color param is not valid and will use the default primary color value!')
     primaryColor = DEFAULT_PRIMARY_COLOR
     return {
-      primaryColor: primaryColor,
+      primaryColor,
       hoverColor: generateHoverColor(primaryColor),
       activeColor: generateActiveColor(primaryColor),
       shadowColor: generateShadowColor(primaryColor),
@@ -118,7 +118,7 @@ export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj 
   }
   primaryColor = tinycolor(color).toHexString()
   return {
-    primaryColor: primaryColor,
+    primaryColor,
     hoverColor: generateHoverColor(primaryColor),
     activeColor: generateActiveColor(primaryColor),
     shadowColor: generateShadowColor(primaryColor),
