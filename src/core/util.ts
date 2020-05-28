@@ -1,49 +1,19 @@
-import BezierEasing from 'bezier-easing'
-import tinycolor, { ColorInputWithoutInstance } from 'tinycolor2'
+import chroma from 'chroma-js'
 import { CSSContent } from './theme'
 
 const DEFAULT_PRIMARY_COLOR = '#1890ff'
 const STORAGE_NAME = 'mini-dynamic-antd-theme-color'
 
-/* basic-easiing */
-const baseEasing = BezierEasing(0.26, 0.09, 0.37, 0.18)
-
-const primaryEasing = baseEasing(0.6)
-const currentEasing = (index) => baseEasing(index * 0.1)
-
-/* tinycolor-mix */
-tinycolor.mix = (color1, color2, amount) => {
-  amount = amount === 0 ? 0 : amount || 50
-
-  const rgb1 = tinycolor(color1).toRgb()
-  const rgb2 = tinycolor(color2).toRgb()
-
-  const p = amount / 100
-
-  const rgba = {
-    r: (rgb2.r - rgb1.r) * p + rgb1.r,
-    g: (rgb2.g - rgb1.g) * p + rgb1.g,
-    b: (rgb2.b - rgb1.b) * p + rgb1.b,
-    a: (rgb2.a - rgb1.a) * p + rgb1.a,
-  }
-  return tinycolor(rgba)
-}
-
 function generateHoverColor(color, ratio = 5) {
-  return tinycolor.mix('#ffffff', color, (currentEasing(ratio) * 100) / primaryEasing).toHexString()
+  return chroma.mix(DEFAULT_PRIMARY_COLOR, '#fff', 0.24, 'rgb').hex()
 }
 
 function generateActiveColor(color, ratio = 7) {
-  return tinycolor
-    .mix('#333333', color, (1 - (currentEasing(ratio) - primaryEasing) / (1 - primaryEasing)) * 100)
-    .toHexString()
+  return chroma.mix(DEFAULT_PRIMARY_COLOR, '#333', 0.24, 'rgb').hex()
 }
 
 function generateShadowColor(color, ratio = 9) {
-  return tinycolor
-    .mix('#888888', color, (1 - (currentEasing(ratio) - primaryEasing) / (1 - primaryEasing)) * 100)
-    .setAlpha(0.2)
-    .toRgbString()
+  return chroma.mix(DEFAULT_PRIMARY_COLOR, '#888', 0.74, 'rgb').alpha(.2).css()
 }
 
 // 判断是否是IE系列浏览器
@@ -104,9 +74,16 @@ const generateStyleHtml = (colorObj: IColorObj): string => {
   return IECSSContent
 }
 
-export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
+/**
+ * Generate the primary colorObj according to the incoming color
+ * @param color
+ * The argument here can be any legal color value representation
+ * For example, hex/ HSL/RGB /rgba, etc
+ * As long as the chroma.valid(color) is validated 
+ */
+export function generateThemeColor(color: any): IColorObj {
   let primaryColor: string
-  if (!tinycolor(color).isValid()) {
+  if (!chroma.valid(color)) {
     console.log('The color param is not valid and will use the default primary color value!')
     primaryColor = DEFAULT_PRIMARY_COLOR
     return {
@@ -116,7 +93,7 @@ export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj 
       shadowColor: generateShadowColor(primaryColor),
     }
   }
-  primaryColor = tinycolor(color).toHexString()
+  primaryColor = chroma(color).hex()
   return {
     primaryColor,
     hoverColor: generateHoverColor(primaryColor),
