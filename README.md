@@ -65,7 +65,6 @@ export default {
   name: 'App',
   methods: {
     changeThemeColor (color) {
-      console.log(color, 8989);
       changeAntdTheme(
         generateThemeColor(color)
       )
