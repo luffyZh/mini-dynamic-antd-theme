@@ -2,7 +2,7 @@
 
 A simple plugin to dynamic change [ant-design](https://ant.design) || [ant-design-vue](https://www.antdv.com) theme whether less or css.
 
-> After gzip: 10.5kB
+> After gzip: 10.6kB
 
 ## 🌍 Browser Support
 

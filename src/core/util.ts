@@ -83,7 +83,20 @@ type IColorObj = {
   shadowColor: string
 }
 
-const generateStyleHtml = (colorObj: IColorObj): string => {
+const generateCustomCss = (customCss: string|undefined) => {
+  if (typeof customCss !== 'string'
+    || (typeof customCss === 'string' && customCss.trim().length === 0)
+  ) {
+    return ''
+  }
+  customCss = customCss.replace(/\$primary\-color/g, 'var(--primary-color)')
+  customCss = customCss.replace(/\$primary\-hover-color/g, 'var(--primary-hover-color)')
+  customCss = customCss.replace(/\$primary\-active-color/g, 'var(--primary-active-color)')
+  customCss = customCss.replace(/\$primary\-shadow-color/g, 'var(--primary-shadow-color)')
+  return customCss
+}
+
+const generateStyleHtml = (colorObj: IColorObj, customCss?: string): string => {
   const { activeColor, primaryColor, hoverColor, shadowColor } = colorObj
   if (!IEVersion()) {
     const cssVar = `
@@ -94,9 +107,9 @@ const generateStyleHtml = (colorObj: IColorObj): string => {
         --primary-shadow-color: ${shadowColor};
       }
     `
-    return `${cssVar}\n${CSSContent}`
+    return `${cssVar}\n${CSSContent}\n${generateCustomCss(customCss)}`
   }
-  let IECSSContent = CSSContent
+  let IECSSContent = `${CSSContent}\n${generateCustomCss(customCss)}`
   IECSSContent = IECSSContent.replace(/var\(\-\-primary\-color\)/g, primaryColor as string)
   IECSSContent = IECSSContent.replace(/var\(\-\-primary\-hover\-color\)/g, hoverColor as string)
   IECSSContent = IECSSContent.replace(/var\(\-\-primary\-active\-color\)/g, activeColor as string)
@@ -125,16 +138,16 @@ export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj 
   }
 }
 
-export function changeAntdTheme(colorObj: IColorObj) {
+export function changeAntdTheme(colorObj: IColorObj, customCss?: string) {
   window.localStorage.setItem(STORAGE_NAME, colorObj.primaryColor || DEFAULT_PRIMARY_COLOR)
   let styleNode = document.getElementById('mini_dynamic_antd_theme_custom_style')
   if (!styleNode) {
     // avoid repeat insertion
     styleNode = document.createElement('style')
     styleNode.id = 'mini_dynamic_antd_theme_custom_style'
-    styleNode.innerHTML = generateStyleHtml(colorObj)
+    styleNode.innerHTML = generateStyleHtml(colorObj, customCss)
     document.getElementsByTagName('head')[0].appendChild(styleNode)
   } else {
-    styleNode.innerHTML = generateStyleHtml(colorObj)
+    styleNode.innerHTML = generateStyleHtml(colorObj, customCss)
   }
 }

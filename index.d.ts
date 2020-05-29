@@ -2,19 +2,11 @@
 declare module 'mini-dynamic-antd-theme' {
   import { ColorInputWithoutInstance } from 'tinycolor2';
 
-  interface IComponentProps {
-    primaryColor?: ColorInputWithoutInstance;
-    storageName?: string;
-    style?: CSSStyleDeclaration;
-    placement?: PlacementValues,
-    themeChangeCallback?: (color: ColorInputWithoutInstance) => void
-  }
-
   type IColorObj = {
-    primaryColor: ColorInputWithoutInstance;
-    hoverColor: ColorInputWithoutInstance;
-    activeColor: ColorInputWithoutInstance;
-    shadowColor: ColorInputWithoutInstance;
+    primaryColor: string;
+    hoverColor: string;
+    activeColor: string;
+    shadowColor: string;
   };
   
   export function changeAntdTheme(colorObj: IColorObj): void;
