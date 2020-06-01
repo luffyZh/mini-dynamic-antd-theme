@@ -9,7 +9,7 @@ declare module 'mini-dynamic-antd-theme' {
     shadowColor: string;
   };
   
-  export function changeAntdTheme(colorObj: IColorObj): void;
+  export function changeAntdTheme(colorObj: IColorObj, customCss?: string): void;
   
   export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj;
 
