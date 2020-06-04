@@ -101,8 +101,6 @@ document.getElementById('header_bar').style.backgroundColor
 
 **This solution is easy to use, so it is prone to problems. We hope you can give us timely feedback. For example, if there is a problem with any component, we will fix the updated version as soon as possible.**
 
- - The current version requires your antd version to be lower than v3.25.0
-
 After the version_4.0, `ant-design` has lots of changes. So the plugin could have some problems, you can find and give me a issue. I'll fix it as soon as possible.
 
 
