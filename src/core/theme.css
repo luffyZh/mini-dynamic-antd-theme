@@ -442,6 +442,13 @@ html {
 .ant-tabs-nav .ant-tabs-tab-active {
   color: var(--primary-color);
 }
+/* antd v4.6 */
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color);
+}
+
+/*
+cascader 相关*/
 .ant-cascader-picker:focus .ant-cascader-input {
   border-color: var(--primary-hover-color);
   -webkit-box-shadow: 0 0 0 2px var(--primary-shadow-color);

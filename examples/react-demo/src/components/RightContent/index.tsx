@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { Tooltip, Tag } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useModel } from 'umi';
 // eslint-disable-next-line
 import { generateThemeColor, changeAntdTheme } from 'mini-dynamic-antd-theme';
@@ -31,6 +31,12 @@ const GlobalHeaderRight: React.FC<{}> = () => {
   if (navTheme === 'dark' && layout === 'topmenu') {
     className = `${styles.right}  ${styles.dark}`;
   }
+
+  useEffect(() => {
+    changeAntdTheme(
+      generateThemeColor('red')
+    )
+  }, []);
 
   return (
     <div className={className}>

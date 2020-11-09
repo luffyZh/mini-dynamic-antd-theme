@@ -49,6 +49,8 @@ const CSSContent: string = `
   .ant-anchor-link-active > .ant-anchor-link-title {
     color: var(--primary-color);
   }
+  /*
+  Select相关*/
   .ant-select-auto-complete.ant-select .ant-input:focus,
   .ant-select-auto-complete.ant-select .ant-input:hover {
     border-color: var(--primary-hover-color);
@@ -78,6 +80,20 @@ const CSSContent: string = `
   .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
     background-color: var(--primary-shadow-color);
   }
+  /* antd v4.6 */
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: var(--primary-hover-color);
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: var(--primary-active-color);
+  }
+  .ant-select-focused:not(.ant-select-disabled).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: var(--primary-hover-color);
+    box-shadow: 0 0 0 2px var(--primary-shadow-color);
+  }
+
+  /* 
+  input 相关 */
   .ant-input:hover {
     border-color: var(--primary-hover-color);
   }
@@ -436,6 +452,13 @@ const CSSContent: string = `
   .ant-tabs-nav .ant-tabs-tab-active {
     color: var(--primary-color);
   }
+  /* antd v4.6 */
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--primary-color);
+  }
+
+  /*
+  cascader 相关*/
   .ant-cascader-picker:focus .ant-cascader-input {
     border-color: var(--primary-hover-color);
     -webkit-box-shadow: 0 0 0 2px var(--primary-shadow-color);
