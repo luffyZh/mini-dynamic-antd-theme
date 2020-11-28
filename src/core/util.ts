@@ -1,6 +1,6 @@
 import BezierEasing from 'bezier-easing'
 import tinycolor, { ColorInputWithoutInstance } from 'tinycolor2'
-import { CSSContent } from './theme'
+import { CSSStr } from './theme'
 
 const DEFAULT_PRIMARY_COLOR = '#1890ff'
 const STORAGE_NAME = 'mini-dynamic-antd-theme-color'
@@ -107,14 +107,14 @@ const generateStyleHtml = (colorObj: IColorObj, customCss?: string): string => {
         --primary-shadow-color: ${shadowColor};
       }
     `
-    return `${cssVar}\n${CSSContent}\n${generateCustomCss(customCss)}`
+    return `${cssVar}\n${CSSStr}\n${generateCustomCss(customCss)}`
   }
-  let IECSSContent = `${CSSContent}\n${generateCustomCss(customCss)}`
-  IECSSContent = IECSSContent.replace(/var\(\-\-primary\-color\)/g, primaryColor as string)
-  IECSSContent = IECSSContent.replace(/var\(\-\-primary\-hover\-color\)/g, hoverColor as string)
-  IECSSContent = IECSSContent.replace(/var\(\-\-primary\-active\-color\)/g, activeColor as string)
-  IECSSContent = IECSSContent.replace(/var\(\-\-primary\-shadow\-color\)/g, shadowColor as string)
-  return IECSSContent
+  let IECSSStr = `${CSSStr}\n${generateCustomCss(customCss)}`
+  IECSSStr = IECSSStr.replace(/var\(\-\-primary\-color\)/g, primaryColor as string)
+  IECSSStr = IECSSStr.replace(/var\(\-\-primary\-hover\-color\)/g, hoverColor as string)
+  IECSSStr = IECSSStr.replace(/var\(\-\-primary\-active\-color\)/g, activeColor as string)
+  IECSSStr = IECSSStr.replace(/var\(\-\-primary\-shadow\-color\)/g, shadowColor as string)
+  return IECSSStr
 }
 
 export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
