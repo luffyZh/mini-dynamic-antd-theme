@@ -1,12 +1,13 @@
 {
   "name": "mini-dynamic-antd-theme",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "main": "lib/index.js",
   "license": "MIT",
   "types": "index.d.ts",
   "repository": "https://github.com/luffyZh/mini-dynamic-antd-theme.git",
   "scripts": {
     "dev": "webpack --progress --mode development",
+    "prebuild": "node autoCss2Str.js",
     "build": "webpack -p --progress",
     "watch": "webpack --watch --progress",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -24,6 +25,7 @@
     "@types/tinycolor2": "^1.4.2",
     "bezier-easing": "^2.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "css2str": "^0.1.1",
     "pre-commit": "^1.2.2",
     "prettier": "^2.0.5",
     "tinycolor2": "^1.4.1",
