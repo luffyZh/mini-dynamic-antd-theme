@@ -12,6 +12,12 @@ import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
 
+const customCss = `
+  h2.ant-typography, .ant-typography h2 {
+    color: blue
+  }
+`;
+
 const ENVTagColor = {
   dev: 'orange',
   test: 'green',
@@ -34,7 +40,8 @@ const GlobalHeaderRight: React.FC<{}> = () => {
 
   useEffect(() => {
     changeAntdTheme(
-      generateThemeColor('red')
+      generateThemeColor('red'),
+      { customCss }
     )
   }, []);
 
@@ -46,7 +53,8 @@ const GlobalHeaderRight: React.FC<{}> = () => {
           className={styles.theme_color_pink}
           onClick={
             () => changeAntdTheme(
-              generateThemeColor('pink')
+              generateThemeColor('pink'),
+              { customCss }
             )
           }
         />

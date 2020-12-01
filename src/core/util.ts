@@ -138,8 +138,21 @@ export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj 
   }
 }
 
-export function changeAntdTheme(colorObj: IColorObj, customCss?: string) {
-  window.localStorage.setItem(STORAGE_NAME, colorObj.primaryColor || DEFAULT_PRIMARY_COLOR)
+type IOptionsProps = {
+  customCss?: string
+  storageName?: string
+}
+
+const defaultOptions = {
+  customCss: '',
+  storageName: '',
+}
+
+export function changeAntdTheme(colorObj: IColorObj, options: IOptionsProps = defaultOptions) {
+  const { customCss, storageName } = options;
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem(storageName || STORAGE_NAME, colorObj.primaryColor || DEFAULT_PRIMARY_COLOR)
+  }
   let styleNode = document.getElementById('mini_dynamic_antd_theme_custom_style')
   if (!styleNode) {
     // avoid repeat insertion

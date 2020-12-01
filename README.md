@@ -94,7 +94,7 @@ document.getElementById('header_bar').style.backgroundColor
 | export       | Description         |
 | ---------- | ------------ |
 | generateThemeColor   | `param: color`, generate colorObj based on color  |
-| changeAntdTheme   | `param: colorObj`, change the antd theme |
+| changeAntdTheme   | `param: (colorObj, options)`, change the antd theme. The options specific attributes are as follows： - `storageName`: This can be configured to set storageName when not using picker . - `customCss`: custom Css |
 
 
 ## 🍎 Attention
