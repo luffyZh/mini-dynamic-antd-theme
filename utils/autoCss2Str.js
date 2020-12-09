@@ -19,9 +19,9 @@ function getFileStat(path){
 }
 
 // 输入的 theme.css
-const inFilePath = path.join(`${__dirname}/src/core/theme.css`);
+const inFilePath = path.join(`${__dirname}/../src/core/theme.css`);
 // 输出的 theme.js
-const outFilePath = path.join(`${__dirname}/src/core/theme.ts`);
+const outFilePath = path.join(`${__dirname}/../src/core/theme.ts`);
 
 /**
  * @description 先删除再创建，保证每次都是最新的css文件
