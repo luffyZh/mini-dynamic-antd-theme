@@ -117,7 +117,7 @@ const generateStyleHtml = (colorObj: IColorObj, customCss?: string): string => {
   return IECSSStr
 }
 
-export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
+function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
   let primaryColor: string
   if (!tinycolor(color).isValid()) {
     console.log('The color param is not valid and will use the default primary color value!')
@@ -148,7 +148,8 @@ const defaultOptions = {
   storageName: '',
 }
 
-export function changeAntdTheme(colorObj: IColorObj, options: IOptionsProps = defaultOptions) {
+export function changeAntdTheme(color: ColorInputWithoutInstance, options: IOptionsProps = defaultOptions) {
+  const colorObj: IColorObj = generateThemeColor(color);
   const { customCss, storageName } = options;
   if (typeof window !== 'undefined') {
     window.localStorage.setItem(storageName || STORAGE_NAME, colorObj.primaryColor || DEFAULT_PRIMARY_COLOR)

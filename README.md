@@ -20,24 +20,20 @@ A simple plugin to dynamic change [ant-design](https://ant.design) || [ant-desig
 ### Ant-Design
 
 ```
-import { generateThemeColor, changeAntdTheme } from 'mini-dynamic-antd-theme';
+import { changeAntdTheme } from 'mini-dynamic-antd-theme';
 
 <div className={styles.themeContainer}>
   Change theme：
   <span 
     className={styles.theme_color_pink}
     onClick={
-      () => changeAntdTheme(
-        generateThemeColor('pink')
-      )
+      () => changeAntdTheme('pink')
     }
   />
   <span 
     className={styles.theme_color_green}
     onClick={
-      () => changeAntdTheme(
-        generateThemeColor('green')
-      )
+      () => changeAntdTheme('green')
     }
   />
 </div>
@@ -57,7 +53,7 @@ import { generateThemeColor, changeAntdTheme } from 'mini-dynamic-antd-theme';
 </template>
 
 <script>
-import { generateThemeColor, changeAntdTheme } from 'mini-dynamic-antd-theme';
+import { changeAntdTheme } from 'mini-dynamic-antd-theme';
 
 ...
 
@@ -65,9 +61,7 @@ export default {
   name: 'App',
   methods: {
     changeThemeColor (color) {
-      changeAntdTheme(
-        generateThemeColor(color)
-      )
+      changeAntdTheme(color)
     }
   }
 };
@@ -93,8 +87,7 @@ document.getElementById('header_bar').style.backgroundColor
 ## 🌞 Export
 | export       | Description         |
 | ---------- | ------------ |
-| generateThemeColor   | `param: color`, generate colorObj based on color  |
-| changeAntdTheme   | `param: (colorObj, options)`, change the antd theme. The options specific attributes are as follows： - `storageName`: This can be configured to set storageName when not using picker . - `customCss`: custom Css |
+| changeAntdTheme   | `param: (color, options)`, change the antd theme. The options specific attributes are as follows： - `storageName`: This can be configured to set storageName when not using picker . - `customCss`: custom Css |
 
 
 ## 🍎 Attention

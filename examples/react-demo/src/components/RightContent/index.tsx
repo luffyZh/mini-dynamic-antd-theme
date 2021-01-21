@@ -4,7 +4,7 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import React, { useEffect } from 'react';
 import { useModel } from 'umi';
 // eslint-disable-next-line
-import { generateThemeColor, changeAntdTheme } from 'mini-dynamic-antd-theme';
+import { changeAntdTheme } from 'mini-dynamic-antd-theme';
 import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
 import SelectLang from '../SelectLang';
@@ -40,9 +40,9 @@ const GlobalHeaderRight: React.FC<{}> = () => {
 
   useEffect(() => {
     changeAntdTheme(
-      generateThemeColor('red'),
-      { customCss }
-    )
+        'red',
+        { customCss }
+    );
   }, []);
 
   return (
@@ -53,7 +53,7 @@ const GlobalHeaderRight: React.FC<{}> = () => {
           className={styles.theme_color_pink}
           onClick={
             () => changeAntdTheme(
-              generateThemeColor('pink'),
+              'pink',
               { customCss }
             )
           }
@@ -61,9 +61,7 @@ const GlobalHeaderRight: React.FC<{}> = () => {
         <span 
           className={styles.theme_color_green}
           onClick={
-            () => changeAntdTheme(
-              generateThemeColor('green')
-            )
+            () => changeAntdTheme('green')
           }
         />
       </div>
