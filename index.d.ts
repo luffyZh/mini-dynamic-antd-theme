@@ -8,6 +8,8 @@ declare module 'mini-dynamic-antd-theme' {
     activeColor: string;
     shadowColor: string;
   };
+
+  export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj;
   
   export function changeAntdTheme(color: ColorInputWithoutInstance, options?: object): void;
 

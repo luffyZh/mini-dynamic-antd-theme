@@ -41,8 +41,7 @@ function generateActiveColor(color, ratio = 7) {
 
 function generateShadowColor(color, ratio = 9) {
   return tinycolor
-    .mix('#888888', color, (1 - (currentEasing(ratio) - primaryEasing) / (1 - primaryEasing)) * 100)
-    .setAlpha(0.2)
+    .mix('#fff', color, (1 - (currentEasing(ratio) - primaryEasing) / (1 - primaryEasing)) * 100)
     .toRgbString()
 }
 
@@ -117,7 +116,7 @@ const generateStyleHtml = (colorObj: IColorObj, customCss?: string): string => {
   return IECSSStr
 }
 
-function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
+export function generateThemeColor(color: ColorInputWithoutInstance): IColorObj {
   let primaryColor: string
   if (!tinycolor(color).isValid()) {
     console.log('The color param is not valid and will use the default primary color value!')

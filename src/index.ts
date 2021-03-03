@@ -1,3 +1,3 @@
-import { changeAntdTheme } from './core/util'
+import { changeAntdTheme, generateThemeColor } from './core/util'
 
-export { changeAntdTheme }
+export { changeAntdTheme, generateThemeColor }
