@@ -90,7 +90,7 @@ html {
 .ant-input-group-addon .ant-select-focused .ant-select-selection {
   color: var(--primary-color);
 }
-.ant-input-affix-wrapper:hover {
+.ant-input-affix-wrapper:hover, .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
   border-color: var(--primary-hover-color);
 }
 .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
