@@ -52,12 +52,13 @@ html {
 .ant-select-auto-complete.ant-select .ant-input:hover {
   border-color: var(--primary-hover-color);
 }
-.ant-select-selection:hover {
+.ant-select-selection:hover, .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
   border-color: var(--primary-hover-color);
 }
 .ant-select-focused .ant-select-selection,
 .ant-select-selection:focus,
-.ant-select-selection:active {
+.ant-select-selection:active,
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
   border-color: var(--primary-hover-color);
   -webkit-box-shadow: 0 0 0 2px var(--primary-shadow-color);
           box-shadow: 0 0 0 2px var(--primary-shadow-color);
@@ -74,7 +75,8 @@ html {
 .ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled) {
   background-color: var(--primary-shadow-color);
 }
-.ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+.ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled),
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   background-color: var(--primary-shadow-color);
 }
 .ant-input:hover {
