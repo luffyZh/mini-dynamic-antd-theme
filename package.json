@@ -1,6 +1,6 @@
 {
   "name": "mini-dynamic-antd-theme",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "main": "lib/index.js",
   "license": "MIT",
   "types": "index.d.ts",
