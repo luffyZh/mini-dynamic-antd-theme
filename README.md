@@ -1,8 +1,11 @@
 ![](./mini-dynamic-antd-theme.png)
 
-A simple plugin to dynamic change [ant-design](https://ant.design) || [ant-design-vue](https://www.antdv.com) theme whether less or css.
+[![build-passing](https://img.shields.io/badge/build-passing-brightgreen)](https://dynamic-antd-theme-luffyzh.vercel.app/)
+![Gzip Size](https://img.shields.io/bundlephobia/minzip/mini-dynamic-antd-theme/0.5.4)
+![latest tag](https://badgen.net/github/tag/luffyZh/mini-dynamic-antd-theme)
+[![NPM](https://nodei.co/npm/mini-dynamic-antd-theme.png?compact=true)](https://nodei.co/npm/mini-dynamic-antd-theme/)
 
-> After gzip: 10.6kB
+A simple plugin to dynamic change [ant-design](https://ant.design) || [ant-design-vue](https://www.antdv.com) theme whether less or css.
 
 ## 🌍 Browser Support
 
