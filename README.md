@@ -92,7 +92,6 @@ document.getElementById('header_bar').style.backgroundColor
 | ---------- | ------------ |
 | changeAntdTheme   | `param: (color, options)`, change the antd theme. The options specific attributes are as follows： - `storageName`: This can be configured to set storageName when not using picker . - `customCss`: custom Css |
 
-
 ## 🍎 Attention
 
 **This solution is easy to use, so it is prone to problems. We hope you can give us timely feedback. For example, if there is a problem with any component, we will fix the updated version as soon as possible.**
