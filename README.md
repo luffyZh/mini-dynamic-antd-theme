@@ -99,5 +99,6 @@ document.getElementById('header_bar').style.backgroundColor
 
 After the version_4.0, `ant-design` has lots of changes. So the plugin could have some problems, you can find and give me a issue. I'll fix it as soon as possible.
 
+## [CHANGELOG](./CHANGELOG.md)
 
 ## 🌈 More detail u can go to the [dynamic-antd-theme](https://github.com/luffyZh/dynamic-antd-theme)
