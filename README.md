@@ -3,15 +3,16 @@
 [![build-passing](https://img.shields.io/badge/build-passing-brightgreen)](https://dynamic-antd-theme-luffyzh.vercel.app/)
 ![Gzip Size](https://img.shields.io/bundlephobia/minzip/mini-dynamic-antd-theme/0.5.4)
 ![latest tag](https://badgen.net/github/tag/luffyZh/mini-dynamic-antd-theme)
-[![NPM](https://nodei.co/npm/mini-dynamic-antd-theme.png?compact=true)](https://nodei.co/npm/mini-dynamic-antd-theme/)
 
 A simple plugin to dynamic change [ant-design](https://ant.design) || [ant-design-vue](https://www.antdv.com) theme whether less or css.
 
+[![NPM](https://nodei.co/npm/mini-dynamic-antd-theme.png?compact=true)](https://nodei.co/npm/mini-dynamic-antd-theme/)
+
 ## 🌍 Browser Support
 
-| ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) |
+| ![Chrome](https://imgur.com/3C4iKO0.png) | ![Edge](https://imgur.com/vMcaXaw.png) | ![Firefox](https://imgur.com/ihXsdDO.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_64x64.png) | ![Safari](https://imgur.com/ENbaWUu.png) |
 | --- | --- | --- | --- | --- |
-| Chrome 39.0+ ✔ | Edge 12.0+ ✔ | Firefox 30.0+ ✔ | IE 10+ ✔ | Safari 9.1+ ✔ |
+| Chrome 39.0+ ✔ | Edge 12.0+ ✔ | Firefox 30.0+ ✔ | IE 11+ ✔ | Safari 9.1+ ✔ |
 
 ## 📦 Install
 
